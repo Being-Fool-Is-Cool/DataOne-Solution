@@ -13,10 +13,6 @@ import java.util.stream.Collectors;
 
 @Service
 public class TaskOneService {
-    public String HelloWorldTest() {
-        String str = "Hello World";
-        return str;
-    }
 
     public Map<String, Object> alpha(Map<String, Object> request) {
         Map<String, Object> map = new TreeMap<>(request);

@@ -13,7 +13,12 @@ public class TaskTwoService {
     @Autowired ProductsRepository productsRepository;
 
     public TreeMap<String, List> getAllProducts() {
-        List<products> allProduct = productsRepository.getAllProducts();
+        List<products> allProduct = new ArrayList<>();
+        try {
+            allProduct = productsRepository.getAllProducts();
+        }catch (Exception e) {
+            //e.printStackTrace();
+        }
         Map<String, List> map = new HashMap<>();
         for (products product: allProduct) {
             if(!map.containsKey(product.getBrand())) {
